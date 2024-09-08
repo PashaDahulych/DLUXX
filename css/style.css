@@ -717,7 +717,8 @@ address {
   width: .0625rem;
   height: 100%;
   background-color: rgba(255,255,255,.24);
-  z-index: 5
+  z-index: 5;
+  pointer-events: none
 }
 .portfolio__decor--2 {
   right: 47.788779%
@@ -1170,8 +1171,8 @@ address {
     right: 0
   }
   .footer__decor--1 {
-    -webkit-transform: translateX(calc(0 - 3.5rem));
-    transform: translateX(calc(0 - 3.5rem))
+    -webkit-transform: translateX(calc(0 - 56px));
+    transform: translateX(calc(0 - 56px))
   }
   .footer__decor--2 {
     right: 27.44709%
@@ -1193,8 +1194,8 @@ address {
     z-index: -1
   }
   .gallery__decor--1 {
-    -webkit-transform: translateX(calc(0 - 3.5rem));
-    transform: translateX(calc(0 - 3.5rem));
+    -webkit-transform: translateX(calc(0 - 56px));
+    transform: translateX(calc(0 - 56px));
     top: -12.5rem
   }
   .gallery__decor--2 {
@@ -1215,8 +1216,8 @@ address {
     right: 0
   }
   .get-in__decor--1 {
-    -webkit-transform: translateX(calc(0 - 3.5rem));
-    transform: translateX(calc(0 - 3.5rem))
+    -webkit-transform: translateX(calc(0 - 56px));
+    transform: translateX(calc(0 - 56px))
   }
   .get-in__decor--2 {
     right: 27.44709%
