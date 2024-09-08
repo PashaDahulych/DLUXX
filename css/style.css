@@ -1167,12 +1167,10 @@ address {
 @media (min-width:1350px) {
   .footer__decor {
     display: block;
-    position: absolute;
-    right: 0
+    position: absolute
   }
   .footer__decor--1 {
-    -webkit-transform: translateX(calc(0 - 56px));
-    transform: translateX(calc(0 - 56px))
+    right: 3.5rem
   }
   .footer__decor--2 {
     right: 27.44709%
@@ -1184,7 +1182,6 @@ address {
     right: 74.6%
   }
   .gallery__decor {
-    right: 0;
     position: absolute;
     top: 0;
     width: .0625rem;
@@ -1194,8 +1191,7 @@ address {
     z-index: -1
   }
   .gallery__decor--1 {
-    -webkit-transform: translateX(calc(0 - 56px));
-    transform: translateX(calc(0 - 56px));
+    right: 3.5rem;
     top: -12.5rem
   }
   .gallery__decor--2 {
@@ -1212,12 +1208,10 @@ address {
   }
   .get-in__decor {
     display: block;
-    position: absolute;
-    right: 0
+    position: absolute
   }
   .get-in__decor--1 {
-    -webkit-transform: translateX(calc(0 - 56px));
-    transform: translateX(calc(0 - 56px))
+    right: 3.5rem
   }
   .get-in__decor--2 {
     right: 27.44709%
