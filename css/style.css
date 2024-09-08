@@ -145,7 +145,7 @@ address {
   min-width: 0
 }
 [class*=__container] {
-  max-width: 89.375rem;
+  max-width: 64.0625rem;
   margin: 0 auto;
   padding: 0 .9375rem
 }
@@ -171,9 +171,6 @@ address {
 .btn--white {
   background-color: var(--whiteColor)
 }
-.menu {
-  flex: 1 1 auto
-}
 .menu__list {
   display: flex;
   gap: 20px 70px;
@@ -183,7 +180,8 @@ address {
   font-size: .875rem;
   line-height: 1.42;
   letter-spacing: var(--letter-spacing);
-  text-transform: uppercase
+  text-transform: uppercase;
+  justify-content: flex-end
 }
 .menu__link {
   transition: color .3s ease;
@@ -291,23 +289,21 @@ address {
   clip: rect(0 0 0 0)
 }
 .header {
-  transition: padding .3s ease,background-color .3s ease;
+  transition: padding .3s linear,background-color .3s linear;
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 55
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  justify-content: space-between
 }
 .header._header-scroll {
   background: rgba(9,11,26,.6);
   padding-top: .9375rem;
   padding-bottom: .9375rem
-}
-.header__container {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  justify-content: space-between
 }
 .header__logo {
   position: relative;
@@ -321,7 +317,9 @@ address {
   overflow: hidden;
   background-color: var(--blackBrColor);
   color: var(--whiteOpacity);
-  padding-bottom: 2.5rem
+  padding-bottom: 2.5rem;
+  transition: padding .3s linear;
+  position: relative
 }
 .footer__container {
   position: relative
@@ -443,7 +441,9 @@ address {
 .hero {
   position: relative;
   min-height: 100dvh;
-  display: flex
+  display: flex;
+  flex-direction: column;
+  transition: padding .3s linear
 }
 .hero h1 {
   color: var(--whiteColor);
@@ -477,16 +477,6 @@ address {
   background-color: rgba(9,11,26,.4);
   pointer-events: none
 }
-.hero__container {
-  padding-bottom: 3.125rem;
-  position: relative;
-  z-index: 3;
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  flex-direction: column;
-  gap: 1.875rem
-}
 .hero__decor {
   position: absolute;
   top: 0;
@@ -508,11 +498,13 @@ address {
   right: 9.642857%
 }
 .hero__content {
-  max-width: 663px;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 32px;
+  gap: 2rem;
   align-items: flex-start;
   flex-grow: 1;
   height: 100%
@@ -617,8 +609,6 @@ address {
   border-right: .0625rem solid var(--whiteBrColor)
 }
 .services__down-list {
-  max-width: 84.6875rem;
-  margin: 0 auto;
   display: grid;
   height: 100%
 }
@@ -679,7 +669,9 @@ address {
 }
 .portfolio {
   height: 100vh;
-  position: relative
+  position: relative;
+  padding-right: .9375rem;
+  transition: padding .3s linear
 }
 .portfolio h2 {
   color: var(--whiteColor);
@@ -718,23 +710,35 @@ address {
   pointer-events: none;
   z-index: 2
 }
-.portfolio__container {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center
+.portfolio__decor {
+  position: absolute;
+  top: 0;
+  right: 12.566138%;
+  width: .0625rem;
+  height: 100%;
+  background-color: rgba(255,255,255,.24);
+  z-index: 5
+}
+.portfolio__decor--2 {
+  right: 47.788779%
+}
+.portfolio__decor--3 {
+  right: 64.68254%
+}
+.portfolio__decor--4 {
+  right: 78.902116%
 }
 .portfolio__content {
+  position: relative;
+  z-index: 4;
+  padding-top: 40px;
+  padding-bottom: 40px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: start;
-  max-width: 38.8125rem
+  max-width: 38.8125rem;
+  height: 100%
 }
 .portfolio__text {
   color: var(--whiteColor);
@@ -805,7 +809,8 @@ address {
   letter-spacing: .25rem;
   text-transform: uppercase
 }
-.gallery__container {
+.gallery {
+  transition: padding .3s linear;
   position: relative
 }
 .gallery__header {
@@ -861,8 +866,7 @@ address {
 }
 .gallery__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
-  gap: 1.875rem
+  grid-template-columns: repeat(auto-fit,minmax(270px,1fr))
 }
 .gallery__img {
   display: block;
@@ -886,7 +890,8 @@ address {
 .get-in {
   min-height: 400px;
   position: relative;
-  display: flex
+  display: flex;
+  overflow: hidden
 }
 .get-in h2 {
   color: var(--whiteColor);
@@ -919,19 +924,16 @@ address {
   height: 100%;
   background-color: rgba(9,11,26,.4)
 }
-.get-in__container {
+.get-in__content {
   position: relative;
   z-index: 3;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-  padding-bottom: 108px
+  gap: 1.25rem
 }
-.get-in__content {
-  max-width: 65rem;
-  justify-content: space-between;
-  flex-wrap: wrap
+@media (min-width:62.1875em) {
+  .hero h1 {
+    font-size: 4.875rem
+  }
 }
 @media (min-width:87.5em) {
   .services__wrapper .count:before {
@@ -939,9 +941,6 @@ address {
   }
   .footer {
     padding-top: 7.5rem
-  }
-  .hero h1 {
-    font-size: 4.875rem
   }
   .services {
     padding-top: 6.25rem
@@ -977,11 +976,6 @@ address {
     font-size: 3rem
   }
 }
-@media (min-width:460px) {
-  .portfolio-gallery__list {
-    grid-template-columns: repeat(auto-fit,minmax(270px,1fr))
-  }
-}
 @media (min-width:479.98px) {
   .footer__body {
     grid-template-columns: repeat(2,1fr)
@@ -989,26 +983,34 @@ address {
 }
 @media (min-width:600px) {
   .footer__decor {
+    display: none;
     position: absolute;
-    top: -7.5rem;
-    right: 50%;
+    top: 0;
     width: .0625rem;
-    height: 200%;
+    height: 100%;
     background-color: rgba(240,241,240,.24);
     pointer-events: none;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%)
   }
-  .get-in__decor {
-    position: absolute;
-    top: -7.5rem;
+  .footer__decor--1 {
     right: 50%;
+    display: block
+  }
+  .get-in__decor {
+    display: none;
+    position: absolute;
+    top: 0;
     width: .0625rem;
-    height: 200%;
+    height: 100%;
     background-color: rgba(240,241,240,.24);
     pointer-events: none;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%)
+  }
+  .get-in__decor--1 {
+    right: 50%;
+    display: block
   }
 }
 @media (min-width:767.98px) {
@@ -1016,13 +1018,14 @@ address {
     display: flex;
     align-items: center;
     gap: 83px;
-    justify-content: flex-end
+    justify-content: flex-end;
+    flex-grow: 1
   }
   .header {
     padding-top: 1.5625rem;
     padding-bottom: 1.5625rem
   }
-  .hero__container {
+  .hero {
     padding-top: 5.625rem
   }
   .services__header {
@@ -1042,38 +1045,35 @@ address {
   }
   .services__down-list {
     grid-template-columns: repeat(2,1fr);
-    padding-left: .9375rem;
-    padding-right: .9375rem
+    transition: padding .3s linear
   }
   .services__item {
     border-right: .0625rem solid var(--skywayColor)
   }
+  .portfolio-gallery {
+    transition: padding .3s linear
+  }
   .portfolio-gallery:not(:last-child) {
     margin-bottom: 4.125rem
-  }
-  .portfolio-gallery__list {
-    grid-template-columns: repeat(auto-fit,minmax(370px,1fr));
-    padding-bottom: 80px
   }
   .portfolio-gallery__list li:nth-child(even) {
     -webkit-transform: translateY(-3.75rem);
     transform: translateY(-3.75rem)
   }
+  .get-in {
+    transition: padding .3s linear
+  }
   .get-in h2 {
     flex: 0 1 21.875rem
   }
   .get-in__content {
-    display: flex;
     align-items: flex-end;
-    gap: 1.25rem
+    justify-content: space-between
   }
 }
 @media (min-width:767.98px)and (min-width:87.5em) {
   .services__header {
     gap: 8.125rem
-  }
-  .portfolio-gallery__list {
-    row-gap: 12.5rem
   }
 }
 @media (min-width:991.98px) {
@@ -1093,64 +1093,94 @@ address {
   .footer__social ul li:not(:last-child) {
     margin-bottom: 2.4375rem
   }
-  .hero__content {
-    padding-left: 2.8125rem
-  }
   .hero__down-btn {
     flex: 0 0 100px;
     width: 100px;
     height: 100px
   }
-  .portfolio__content {
-    margin-left: 3.75rem
+  .portfolio-gallery__list {
+    grid-template-columns: repeat(3,1fr);
+    padding-bottom: 5rem
   }
   .gallery__inst {
     margin-right: 1.375rem
   }
+  .gallery__list {
+    gap: 1.875rem
+  }
+}
+@media (min-width:991.98px)and (min-width:87.5em) {
+  .portfolio-gallery__list {
+    row-gap: 12.5rem
+  }
 }
 @media (min-width:1100px) {
-  .footer__logo {
-    margin-left: 2.3125rem
+  .header {
+    padding-left: 56px;
+    padding-right: 56px
+  }
+  .footer {
+    padding-left: 5.75rem;
+    padding-right: 3.5rem
   }
   .footer__body {
-    grid-template-columns: repeat(4,1fr);
-    margin-left: 2.3125rem;
-    margin-right: 2.3125rem
+    grid-template-columns: repeat(4,1fr)
   }
   .footer__body:not(:last-child) {
     margin-bottom: 5.125rem
   }
-  .footer__copy {
-    margin-left: 2.3125rem
+  .hero {
+    padding-left: 100px;
+    padding-right: 56px;
+    padding-bottom: 3.125rem
   }
   .services__down-list {
-    grid-template-columns: repeat(4,1fr)
+    grid-template-columns: repeat(4,1fr);
+    padding-left: 100px;
+    padding-right: 86px
   }
   .services__item {
     padding-top: 8.25rem;
     padding-bottom: 17.8125rem
   }
+  .portfolio {
+    padding-left: 7.1875rem
+  }
+  .portfolio-gallery {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem
+  }
+  .gallery {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem
+  }
+  .get-in {
+    padding-left: 7.1875rem;
+    padding-right: 3.5rem;
+    padding-bottom: 6.75rem
+  }
   .get-in__content {
-    margin-left: 3.8125rem
+    flex: 0 1 68%
   }
 }
 @media (min-width:1350px) {
   .footer__decor {
+    display: block;
     position: absolute;
     right: 0
   }
   .footer__decor--1 {
-    -webkit-transform: translateX(calc(0 - .9375rem));
-    transform: translateX(calc(0 - .9375rem))
+    -webkit-transform: translateX(calc(0 - 3.5rem));
+    transform: translateX(calc(0 - 3.5rem))
   }
   .footer__decor--2 {
-    right: 26.071429%
+    right: 27.44709%
   }
   .footer__decor--3 {
-    right: 50.928571%
+    right: 51.058201%
   }
   .footer__decor--4 {
-    right: 76%
+    right: 74.6%
   }
   .gallery__decor {
     right: 0;
@@ -1163,38 +1193,39 @@ address {
     z-index: -1
   }
   .gallery__decor--1 {
-    -webkit-transform: translateX(calc(0 - .9375rem));
-    transform: translateX(calc(0 - .9375rem));
-    top: -200px
+    -webkit-transform: translateX(calc(0 - 3.5rem));
+    transform: translateX(calc(0 - 3.5rem));
+    top: -12.5rem
   }
   .gallery__decor--2 {
-    right: 26.071429%;
-    top: -128px
+    right: 27.44709%;
+    top: -8rem
   }
   .gallery__decor--3 {
-    right: 50.928571%;
-    top: -200px
+    right: 51.058201%;
+    top: -12.5rem
   }
   .gallery__decor--4 {
-    right: 76%;
-    top: -128px
+    right: 74.6%;
+    top: -8rem
   }
   .get-in__decor {
+    display: block;
     position: absolute;
     right: 0
   }
   .get-in__decor--1 {
-    -webkit-transform: translateX(calc(0 - .9375rem));
-    transform: translateX(calc(0 - .9375rem))
+    -webkit-transform: translateX(calc(0 - 3.5rem));
+    transform: translateX(calc(0 - 3.5rem))
   }
   .get-in__decor--2 {
-    right: 26.071429%
+    right: 27.44709%
   }
   .get-in__decor--3 {
-    right: 50.928571%
+    right: 51.058201%
   }
   .get-in__decor--4 {
-    right: 76%
+    right: 74.6%
   }
 }
 @media (max-width:9991.98px) {
@@ -1211,6 +1242,40 @@ address {
     -webkit-transform: translate(50%,-100px);
     transform: translate(50%,-100px);
     right: 50%
+  }
+}
+@media (max-width:1099px) {
+  .header {
+    padding-right: .9375rem;
+    padding-left: .9375rem
+  }
+  .footer {
+    padding-left: .9375rem;
+    padding-right: .9375rem
+  }
+  .hero {
+    padding-right: .9375rem;
+    padding-left: .9375rem;
+    padding-bottom: 1.25rem
+  }
+  .portfolio {
+    padding-left: .9375rem
+  }
+  .portfolio-gallery {
+    padding-right: .9375rem;
+    padding-left: .9375rem
+  }
+  .gallery {
+    padding-right: .9375rem;
+    padding-left: .9375rem
+  }
+  .get-in {
+    padding-left: .9375rem;
+    padding-right: .9375rem;
+    padding-bottom: 3.75rem
+  }
+  .get-in__content {
+    flex: 0 1 100%
   }
 }
 @media (max-width:991.98px) {
@@ -1230,6 +1295,17 @@ address {
   }
   .services__card h3 {
     padding: .9375rem .625rem
+  }
+  .portfolio__decor--2,
+  .portfolio__decor--3 {
+    display: none
+  }
+  .portfolio-gallery__list {
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: .9375rem
+  }
+  .gallery__list {
+    gap: 1.25rem
   }
 }
 @media (max-width:767.98px) {
@@ -1327,10 +1403,10 @@ address {
     transform: rotate(45deg)
   }
   .header {
-    padding-top: .9375rem;
-    padding-bottom: .9375rem
+    padding-top: 15px;
+    padding-bottom: 15px
   }
-  .hero__container {
+  .hero {
     padding-top: 5rem
   }
   .hero__down-btn {
@@ -1350,6 +1426,10 @@ address {
   .services__card {
     aspect-ratio: 1/1
   }
+  .services__down-list {
+    padding-left: .9375rem;
+    padding-right: .9375rem
+  }
   .services__item:not(:last-child) {
     border-bottom: .0625rem solid var(--skywayColor)
   }
@@ -1357,14 +1437,27 @@ address {
     -webkit-transform: translate(0,0);
     transform: translate(0,0)
   }
+  .portfolio:not(:last-child) {
+    margin-bottom: 1.875rem
+  }
   .portfolio-gallery:not(:last-child) {
     margin-bottom: 1.875rem
   }
   .portfolio-gallery__list {
     gap: .9375rem
   }
+  .get-in {
+    padding-bottom: 0
+  }
   .get-in h2:not(:last-child) {
     margin-bottom: 1.25rem
+  }
+  .get-in__content {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: .9375rem;
+    padding-bottom: .9375rem
   }
   .get-in__btn:not(:last-child) {
     margin-bottom: 1.25rem
@@ -1381,6 +1474,9 @@ address {
   }
   .services__item {
     padding-left: .9375rem
+  }
+  .portfolio:not(:last-child) {
+    margin-bottom: 4.375rem
   }
 }
 @media (max-width:47.99875em) {
@@ -1408,9 +1504,6 @@ address {
   .services__item.count::before {
     font-size: 7.5rem
   }
-  .portfolio:not(:last-child) {
-    margin-bottom: 1.875rem
-  }
   .portfolio__text {
     font-size: 2rem
   }
@@ -1430,16 +1523,6 @@ address {
   @supports not (font-size:clamp(7.5rem ,-4.6511977469rem + 25.3156545679vw ,17.5rem)) {
     .services__wrapper .count:before {
       font-size: calc(7.5rem + 10*(100vw - 47.99875rem)/ 39.50125)
-    }
-  }
-  @supports (font-size:clamp(2.375rem ,-0.6627994367rem + 6.328913642vw ,4.875rem)) {
-    .hero h1 {
-      font-size: clamp(2.375rem ,-.6627994367rem + 6.328913642vw ,4.875rem)
-    }
-  }
-  @supports not (font-size:clamp(2.375rem ,-0.6627994367rem + 6.328913642vw ,4.875rem)) {
-    .hero h1 {
-      font-size: calc(2.375rem + 2.5*(100vw - 47.99875rem)/ 39.50125)
     }
   }
   @supports (padding-top:clamp(1.875rem ,-3.4411490143rem + 11.0755988735vw ,6.25rem)) {
@@ -1502,16 +1585,6 @@ address {
       font-size: calc(7.5rem + 6.25*(100vw - 47.99875rem)/ 39.50125)
     }
   }
-  @supports (margin-bottom:clamp(1.875rem ,-4.9600487326rem + 14.2400556944vw ,7.5rem)) {
-    .portfolio:not(:last-child) {
-      margin-bottom: clamp(1.875rem ,-4.9600487326rem + 14.2400556944vw ,7.5rem)
-    }
-  }
-  @supports not (margin-bottom:clamp(1.875rem ,-4.9600487326rem + 14.2400556944vw ,7.5rem)) {
-    .portfolio:not(:last-child) {
-      margin-bottom: calc(1.875rem + 5.625*(100vw - 47.99875rem)/ 39.50125)
-    }
-  }
   @supports (font-size:clamp(2rem ,0.7848802253rem + 2.5315654568vw ,3rem)) {
     .portfolio__text {
       font-size: clamp(2rem ,.7848802253rem + 2.5315654568vw ,3rem)
@@ -1564,6 +1637,28 @@ address {
       padding-left: calc(.9375rem + 1.1875*(100vw - 61.99875rem)/ 25.50125)
     }
   }
+  @supports (margin-bottom:clamp(4.375rem ,-3.2225136023rem + 12.2543012597vw ,7.5rem)) {
+    .portfolio:not(:last-child) {
+      margin-bottom: clamp(4.375rem ,-3.2225136023rem + 12.2543012597vw ,7.5rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(4.375rem ,-3.2225136023rem + 12.2543012597vw ,7.5rem)) {
+    .portfolio:not(:last-child) {
+      margin-bottom: calc(4.375rem + 3.125*(100vw - 61.99875rem)/ 25.50125)
+    }
+  }
+}
+@media (min-width:47.99875em)and (max-width:62.1875em) {
+  @supports (font-size:clamp(2.375rem ,-6.082184389rem + 17.6195929874vw ,4.875rem)) {
+    .hero h1 {
+      font-size: clamp(2.375rem ,-6.082184389rem + 17.6195929874vw ,4.875rem)
+    }
+  }
+  @supports not (font-size:clamp(2.375rem ,-6.082184389rem + 17.6195929874vw ,4.875rem)) {
+    .hero h1 {
+      font-size: calc(2.375rem + 2.5*(100vw - 47.99875rem)/ 14.18875)
+    }
+  }
 }
 @media (min-width:767.98px)and (max-width:991.98px) {
   .hero__down-btn {
@@ -1583,6 +1678,19 @@ address {
       gap: calc(1.875rem + 6.25*(100vw - 61.99875rem)/ 25.50125)
     }
   }
+}
+@media (min-width:767.98px)and (max-width:61.99875em) {
+  .services__header {
+    gap: 1.875rem
+  }
+}
+@media (min-width:767.98px)and (max-width:1099px) {
+  .services__down-list {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem
+  }
+}
+@media (min-width:991.98px)and (min-width:61.99875em)and (max-width:87.5em) {
   @supports (row-gap:clamp(7.5rem ,-4.6560217636rem + 19.6068820156vw ,12.5rem)) {
     .portfolio-gallery__list {
       row-gap: clamp(7.5rem ,-4.6560217636rem + 19.6068820156vw ,12.5rem)
@@ -1594,10 +1702,7 @@ address {
     }
   }
 }
-@media (min-width:767.98px)and (max-width:61.99875em) {
-  .services__header {
-    gap: 1.875rem
-  }
+@media (min-width:991.98px)and (max-width:61.99875em) {
   .portfolio-gallery__list {
     row-gap: 7.5rem
   }
